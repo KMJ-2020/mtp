@@ -230,7 +230,7 @@ info_mtp(){
   status_mtp
   if [ $? == 1 ];then
     source ./mtp_config
-    public_ip=$(curl -s https://api.ip.sb/ip --ipv4)
+    public_ip=$(curl -s http://ip111.cn --ipv4)
     [ -z "$public_ip" ] && public_ip=$(curl -s ipinfo.io/ip --ipv4)
     domain_hex=$(xxd -pu <<< $domain | sed 's/0a//g')
     client_secret="ee${secret}${domain_hex}"
